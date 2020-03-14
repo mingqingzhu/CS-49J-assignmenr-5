@@ -32,7 +32,16 @@ public class Main {
                 dataSet.add(8);
                 dataSet.add(2.6);
             } else if (choice == 2) {
-                Matrix matrix = new Matrix(4);
+                System.out.println("Please enter 'n' for square matrix n x n: ");
+                int n = scanner.nextInt();
+                Random generator = new Random(System.currentTimeMillis());
+                int[][] matrixIn = new int[n][n];
+                for(int i = 0; i < n; i++) {
+                    for(int j = 0; j < n; j++) {
+                        matrixIn[i][j] = generator.nextInt(10);
+                    }
+                }
+                Matrix matrix = new Matrix(matrixIn, n);
                 System.out.println("The sum of diagonal is: " + matrix.sumMajorDiagonal());
                 System.out.println("The transpose matrix is: ");
                 for (int i = 0; i < 4; i++) {

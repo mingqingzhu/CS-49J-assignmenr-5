@@ -6,15 +6,14 @@ public class Matrix {
     private int sum;
     private int n;
 
-    public Matrix(int n) {
+    public Matrix(int[][] matrixIn, int n) {
         this.n = n;
-        Random generator = new Random(System.currentTimeMillis());
-        matrixIn = new int[n][n];
+        this.matrixIn = matrixIn;
         matrixOut = new int[n][n];
         System.out.println("The input matrix is: ");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print(matrixIn[i][j] = generator.nextInt(10));
+                System.out.print(matrixIn[i][j]);
                 System.out.print(" ");
             }
             System.out.print("\n");
@@ -23,11 +22,7 @@ public class Matrix {
 
     public int sumMajorDiagonal() {
         for (int i = 0; i < n ; i++) {
-            for(int j = 0; j < n; j++) {
-                if (i == j) {
-                    sum += matrixIn[i][j];
-                }
-            }
+            sum += matrixIn[i][i];
         }
         return sum;
     }
