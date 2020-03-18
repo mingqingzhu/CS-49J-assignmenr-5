@@ -6,10 +6,13 @@ public class Matrix {
     private int sum;
     private int n;
 
-    public Matrix(int[][] matrixIn, int n) {
-        this.n = n;
+    public Matrix(int[][] matrixIn) {
+        this.n = matrixIn.length;
         this.matrixIn = matrixIn;
         matrixOut = new int[n][n];
+    }
+
+    public void printMatrix() {
         System.out.println("The input matrix is: ");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {

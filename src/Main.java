@@ -41,7 +41,8 @@ public class Main {
                         matrixIn[i][j] = generator.nextInt(10);
                     }
                 }
-                Matrix matrix = new Matrix(matrixIn, n);
+                Matrix matrix = new Matrix(matrixIn);
+                matrix.printMatrix();
                 System.out.println("The sum of diagonal is: " + matrix.sumMajorDiagonal());
                 System.out.println("The transpose matrix is: ");
                 for (int i = 0; i < 4; i++) {
